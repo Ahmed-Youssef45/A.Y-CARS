@@ -1,0 +1,167 @@
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:root{
+    --logo-color: #cec1a8;
+    --logo-background: #0c1017; 
+}
+body{
+    background-color: #000000;
+    color: white;
+    font-family: 'Playfari Display' sans-serif;
+}
+a{
+    text-decoration: none;
+}
+ul li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Small */
+  @media (min-width: 768px) {
+    .container {
+      width: 740px;
+    }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+  @media (min-width: 1400px) {
+    .container {
+      width: 1350px;
+    }
+  }
+/* Start Main page */
+/* Start header */
+header{
+    border-bottom: 2px solid var(--logo-color);
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    .container{
+        .main-content{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .logo-header{
+                display: flex;
+                align-items: center;
+                .logo{
+                    width: 150px;
+                    height: 150px;
+                    & img{
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+            }
+            & a{
+                height: 100px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                flex-direction: column;
+                align-items: center;
+                & h2{
+                    color: var(--logo-color);
+                    text-align: center;
+                }
+                & p{
+                    font-size: 50px;
+                    color: var(--logo-color);
+                    letter-spacing: 20px;
+                    text-transform: uppercase;
+                    & span{
+                        font-size: 50px;
+                        letter-spacing: 0px;
+                    }
+                }
+            }
+            & nav{
+                .links{
+                    height: 100px;
+                    ul{
+                        li{
+                            transition: 0.5s;
+                            position: relative;
+                            margin-right: 30px;
+                            a{
+                                display: block;
+                                &:hover{
+                                    &::after{
+                                        transform: scale(1);
+                                    }
+                                }
+                                &::after{
+                                    content: "";
+                                    position: absolute;
+                                    left: -8%;
+                                    bottom: 20%;
+                                    width: 120%;
+                                    height: 2px;
+                                    background-color: var(--logo-color);
+                                    transition: 0.5s;
+                                    transform: scale(0);
+                                }
+                                color: var(--logo-color);
+                                text-transform: capitalize;
+                                font-size: 22px;
+                            }
+                            &:last-child{
+                                margin-right: 30px;
+                            }
+                        }
+                    }
+                    .search{
+                        display: flex;
+                        align-items: center;
+                        & i{
+                            cursor: pointer;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 770px){
+            .container{
+                .main-content{
+                    flex-direction: column;
+                    .logo{
+                        /* margin-left: -20px; */
+                    }
+                    & a{
+                        & h2{
+                            color: black;
+                            & span{
+                                margin-top: -30px;
+                                color: var(--logo-color);
+                            }
+                        }
+                    }
+                }
+            }
+    }
+}
+/* End header */
+/* End Main page */

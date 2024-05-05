@@ -55,7 +55,6 @@ body{
   }
 /* End general */
 /* Start Login */
-/* position: absolute; */
 .container{
     .main-content{
         display: flex;
@@ -185,3 +184,7 @@ body{
     }
 }
 /* End Login */
+
+/* Start Main Page */
+
+/* Ene Main Page */
