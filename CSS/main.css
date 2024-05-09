@@ -132,17 +132,24 @@ header{
     }
 }
 /* End header */
+.our-brands{
+    margin-top: 60px;
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 10px;
+    color: var(--logo-color);
+    @media (max-width: 435px){
+        font-size: 40px;
+    }
+}
 /* Start main section */
 .main-section{
     margin-top: 60px;
     .container{
         .main-content{
-            .our-brands{
-                text-align: center;
-                font-size: 30px;
-                letter-spacing: 10px;
-                color: var(--logo-color);
-            }
+            background-color: var(--logo-background);
+            padding-bottom: 30px;
+            border-radius: 10px;
             .brand-header{
                 display: flex;
                 justify-content: space-around;
@@ -150,15 +157,38 @@ header{
                 margin-top: 50px;
                 color: var(--text-color);
                 border: 1px solid var(--logo-color);
+                border-radius: 10px;
                 background-color: var(--logo-background);
                 & li{
                     width: calc(100%/3);
                     padding: 15px 0;
                     transition: 0.5s;
                     position: relative;
+                    border-radius: 10px;
+                    &:first-child{
+                        background-color: var(--logo-color);
+                        color: var(--logo-background);
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                        .fa-caret-down{
+                            color: var(--logo-color);
+                        }
+                    }
                     &:nth-child(2){
                         border-right: 1px solid var(--logo-color);
                         border-left: 1px solid var(--logo-color);
+                        border-radius: 0;
+                        &:hover{
+                            & li{
+                                &:first-child{
+                                    background-color: var(--logo-background);
+                                }
+                            }
+                        }
+                    }
+                    &:last-child{
+                        border-top-left-radius: 0;
+                        border-bottom-left-radius: 0;
                     }
                     &:hover{
                         cursor: pointer;
@@ -184,8 +214,186 @@ header{
                     }
                 }
             }
+            .brands{
+                margin-top: 50px;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                gap: 30px 0;
+                /* padding-left:30px; */
+                .card{
+                    /* border: 1px solid; */
+                    border-radius: 5px;
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 400px;
+                    height: 255px;
+                    transition: 0.8s;
+                    &:hover{
+                        /* width: 450px; */
+                        /* height: 305px; */
+                        & img{
+                            filter: brightness(0.4);
+                        }
+                        .info{
+                            opacity: 1;
+                        }
+                        .social{
+                            opacity: 1;
+                        }
+                    }
+                    & img{
+                        position: absolute;
+                        width: 400px;
+                        max-width: 100%;
+                        transition: 0.8s;
+                        border-radius: 10px;
+                    }
+                    .info{
+                        position: absolute;
+                        left: 20px;
+                        bottom: 20px;
+                        transition: 0.8s;
+                        opacity: 0;
+                        & h3{
+                            color: var(--logo-color);
+                            font-size: 25px;
+                            text-transform: capitalize;
+                            margin-bottom: 10px;
+                            & a{
+                                color: var(--logo-color);
+                            }
+                            & i{
+                                margin-left: 10px;
+                                font-size: 15px;
+                            }
+                        }
+                        & p{
+                            font-size: 15px;
+                            text-transform: capitalize;
+                        }
+                    }
+                    .social{
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        right: 10px;
+                        top: 40%;
+                        transform: translateY(-40%);
+                        font-size: 18px;
+                        opacity: 0;
+                        transition: 0.8s;
+                        & a{
+                            color: var(--logo-color);
+                            &:nth-child(2){
+                                margin: 20px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 435px){
+            .main-content{
+                padding-bottom: 0px;
+                .brand-header{
+                    & li{
+                        & i{
+                            font-size: 15px;
+                        }
+                        & p{
+                            font-size: 15px;
+                        }
+                    }
+                }
+                .brands{
+                    grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+                    gap: 0;
+                    .card{
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 }
 /* End main section */
+/* Start footer */
+footer{
+    margin-top: 80px;
+    padding-bottom: 30px;
+    height: 250px;
+    max-height: 250px;
+    border-top: 1px solid var(--logo-color);
+    .container{
+        .footer-content{
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            color: var(--logo-color);
+            .footer-logo{
+                position: relative;
+                width: 150px;
+                & img{
+                    width: 100%;
+                }
+                & h2{
+                    margin-top: -15px;
+                    margin-bottom: 15px;
+                }
+                .footer-social{
+                    display: flex;
+                    flex-direction: column;
+                    top: 60%;
+                    left:-30px;
+                    transform: translateY(-60%);
+                    position: absolute;
+                    & a{
+                        font-size: 15px;
+                        color: white;
+                        &:nth-child(2){
+                            margin: 15px 0;
+                        }
+                    }
+                }
+            }
+            .footer-info{
+                height: 250px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                .footer-info-content{
+                    & i{
+                        font-size: 20px;
+                        margin-bottom: 10px;
+                        color: white;
+                    }
+                    & p{
+                        font-size: 17px;
+                    }
+                }
+            }
+            @media (max-width:435px){
+                .footer-logo{
+                    width: 120px;
+                    .footer-social{
+                        top: 190px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 100%;
+                        & a{
+                            font-size: 18px;
+                            &:nth-child(2){
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* End footer */
 /* End Main page */
